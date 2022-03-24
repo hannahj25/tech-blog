@@ -23,6 +23,6 @@ header, .project:not(:last-child) {
   margin-left: -5px;
 }
 
-textarea {
+#comment {
   width: 100%;
 }
