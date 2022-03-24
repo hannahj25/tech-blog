@@ -1,11 +1,17 @@
 [
     {
-      "content": "Just testing comment function works"
+      "content": "Just testing comment function works",
+      "blog_id": 1,
+      "user_id": 2
     },
     {
-      "content": "Hi like your post"
+      "content": "Hi like your post",
+      "blog_id": 1,
+      "user_id": 3
     },
     {
-      "content": "Nice"
+      "content": "Nice",
+      "blog_id": 2,
+      "user_id": 1
     }
   ]

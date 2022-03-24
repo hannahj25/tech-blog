@@ -2,7 +2,16 @@
   <h2>{{title}}</h2>
   <p>{{content}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  {{#if comments.length}}
+  <h4>Comments:</h4>
+  <ul class="list-group">
+    {{#each comments as |comment|}}
+  <li class="list-group-item">{{comment.content}} <br> Posted by {{user.name}}</li>
+  {{/each}}
+</ul>
+{{/if}}
+  <br>
   <p>
-    <button class="btn btn-primary">Comment</button>
+    <button class="btn btn-primary">Add Comment</button>
   </p>
 </div>
