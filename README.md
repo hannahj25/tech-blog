@@ -23,7 +23,14 @@
 Simple 'blog' website. Users can sign up and log in, create blog posts, and comment on others' posts.
 
 ## Screenshots
+Homepage
+![screenshot-homepage](./assets/homepage.png)
 
+User's Dashboard
+![screenshot-dashboard](./assets/dashboard.png)
+
+Comment
+![screenshot-comment](./assets/commentmodal.png)
 
 ## Link
 
