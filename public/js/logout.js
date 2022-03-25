@@ -1,3 +1,5 @@
+// On click of log out button, makes api call to logout route to user is no longer logged in
+
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',

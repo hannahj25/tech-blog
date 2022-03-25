@@ -1,7 +1,6 @@
 const postButton = document.querySelector('#post-comment');
 
-console.log(postButton);
-
+// Function to post comment to blog
 postComment = async (event) => {
     event.preventDefault();
   

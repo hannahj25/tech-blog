@@ -2,9 +2,9 @@ const router = require('express').Router();
 const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Homepage route
 router.get('/', async (req, res) => {
   try {
-    // Get all Blogs and JOIN with user data
     const blogData = await Blog.findAll({
       include: [
         {
@@ -14,10 +14,8 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    // Serialize data so the template can read it
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
     res.render('homepage', { 
       blogs, 
       logged_in: req.session.logged_in 
@@ -27,6 +25,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Route for individual blog posts
 router.get('/blog/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
@@ -48,10 +47,9 @@ router.get('/blog/:id', withAuth, async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+// User's dashboard route
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Blog }],
@@ -69,12 +67,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+// Route to edit post page
 router.get('/edit', withAuth, async (req, res) => {
   res.render("edit");
 });
 
+// Route to log in and sign up page
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
