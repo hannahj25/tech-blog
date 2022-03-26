@@ -1,5 +1,5 @@
 # Tech Blog
-[License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Table of Contents
 
@@ -33,6 +33,7 @@ Comment
 ![screenshot-comment](./assets/commentmodal.png)
 
 ## Link
+https://techbloghan.herokuapp.com/
 
 
 ## Built With
@@ -72,4 +73,4 @@ Email: peterson.hj@outlook.com
 GitHub: https://github.com/hannahj25
 
 ## Acknowledgements
-For the basis of this application I started with code from a project included in the University of Adelaide's Coding Boot Camp curriculum, and adapted, modified and added to it for my purposes here.
+For the basis of this application I started with some code from a project included in the University of Adelaide's Coding Boot Camp curriculum, and adapted, modified and added to it for my purposes here.
