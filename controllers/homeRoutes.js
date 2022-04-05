@@ -68,8 +68,17 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 // Route to edit post page
-router.get('/edit', withAuth, async (req, res) => {
-  res.render("edit");
+router.get('/edit/:id', withAuth, async (req, res) => {
+  // grab the post
+  const blog = await Blog.findByPk(req.params.id);
+
+  // load it into the hbs
+
+
+  res.render("edit", {
+    blog: blog.toJSON(),
+
+  });
 });
 
 // Route to log in and sign up page

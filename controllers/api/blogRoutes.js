@@ -39,6 +39,9 @@ router.post('/', withAuth, async (req, res) => {
  
   // Edit existing blog post
   router.put('/:id', withAuth, async (req, res) => {
+
+    console.log(req.body);
+
     try {
       const blogData = await Blog.update(req.body, {
         where: {
